@@ -9,6 +9,11 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
+app.get('/exit', (req, res) => {
+  res.send('closing');
+  process.exit(1)
+})
+
 app.get('/redis', (req, res) => {
   redis.createClient({
     host: req.query.host,
